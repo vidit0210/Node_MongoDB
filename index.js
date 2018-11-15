@@ -14,7 +14,7 @@ const courseSchema  = new mongoose.Schema({
     date:{type :Date,default:Date.now()},
     isPublished:Boolean
 });
-//mongoose.model Gives back a Classs
+//mongoose.model Gives back a Class
 
 const Course  = mongoose.model('Course',courseSchema);
 
@@ -45,3 +45,16 @@ async function getAllCourses() {
     console.log(result)
 }
 getAllCourses();
+
+/*
+Comparison Operators in Mongo Databases Structure
+gt-greater than
+gte -greter than or equal
+lt - less than
+lte -less than or equal
+in-it Contains or not
+nin-not in
+eq- equal to
+ne - not equal to
+
+ */
