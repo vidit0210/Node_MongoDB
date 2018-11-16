@@ -1,7 +1,5 @@
-const Joi = require('joi');
 const express = require('express');
 const router = express.Router();
-const
 
 const data =[
     {id:1,genre:'Action',code:'Red'},
@@ -22,4 +20,15 @@ router.get('/',(req,res)=>{
     res.send("")
 })
 
+router.put('/:id',(req,res)=>{
+    const check = data.find( c=>c.id==req.params.id);
+    if(!check){console.log("item not found")};
+    const result = verify(req.body);
+    if(result.error){ return res.status(400).send(error.details.message[0])};
+    const item={
+        genre:req.body.genre
+
+    }
+
+})
 
