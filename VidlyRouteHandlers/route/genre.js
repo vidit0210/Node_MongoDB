@@ -21,14 +21,15 @@ router.get('/',(req,res)=>{
 })
 
 router.put('/:id',(req,res)=>{
-    const check = data.find( c=>c.id==req.params.id);
-    if(!check){console.log("item not found")};
-    const result = verify(req.body);
-    if(result.error){ return res.status(400).send(error.details.message[0])};
-    const item={
-        genre:req.body.genre
 
-    }
+    const result = verify(req.body);
+    if(result.error){return res.status(200).send(error.details.message[0])};
+    const check = data.find(c=>{c.id==req.params.id});
+    if(!check){ return res.send('Item not foung')}
+    data.genre = res.body.genre;
+    data.code=res.body.code;
 
 })
+
+
 
