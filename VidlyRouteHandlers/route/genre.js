@@ -40,6 +40,7 @@ router.post('/',(req,res)=>{
     data.push(add);
 })
 
+router.delete('/:id',(req,res)=>{})
 
 
 
